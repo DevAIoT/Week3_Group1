@@ -15,7 +15,7 @@ import os
 import requests
 
 class ClientEdge:
-    def __init__(self, server_url="http://localhost:8000/predict"):
+    def __init__(self, server_url="https://d12c4b675ed2.ngrok-free.app/"):
         self.server_url = server_url
         self.results = {
             'system_info': self.get_system_info(),
@@ -300,7 +300,7 @@ def main():
     print("="*60)
 
     # Create client instance
-    client = ClientEdge(server_url="http://localhost:8000/predict")
+    client = ClientEdge(server_url="http://172.20.10.4:8000/predict")
 
     # Run offloading test with 100 images
     client.run_offloading_test(num_images=100)

@@ -1,0 +1,34 @@
+============================================================
+Code Offloading Test Results
+============================================================
+
+Requests:
+  Total: 100
+  Successful: 100
+  Failed: 0
+
+Timing:
+  Total time: 47.718 seconds
+  Avg loopback time: 456.76 ms
+  Avg server inference time: 45.89 ms
+  Avg network overhead: 410.87 ms
+  Throughput: 2.10 images/sec
+
+Baseline Comparison:
+  Baseline (Task 1): 83.66 ms
+  Offloading (Task 2): 456.76 ms
+  Difference: 373.10 ms (445.98%)
+
+Client Resources:
+  Initial CPU: 4.2%
+  Avg CPU during test: 2.1%
+  Avg Memory during test: 18.58 GB
+
+Analysis:
+  The time difference of 373.10 ms (445.98%) represents
+  the cost of offloading, which includes:
+    - Serialization overhead: ~205.44 ms
+    - Network latency (localhost): ~205.44 ms
+    - Total overhead: 410.87 ms
+
+  [WARNING] Overhead is significant (446.0%)

@@ -1,0 +1,845 @@
+{
+  "system_info": {
+    "platform": "Windows-11-10.0.26100-SP0",
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "cpu_count": 22,
+    "ram_total_gb": 31.37,
+    "python_version": "3.12.11",
+    "timestamp": "2026-01-26T14:23:33.913009",
+    "server_url": "http://172.20.10.4:8000/predict"
+  },
+  "offloading_test": {
+    "num_images": 100,
+    "num_successful": 100,
+    "num_failed": 0,
+    "total_time_seconds": 47.718,
+    "avg_loopback_time_ms": 456.76,
+    "avg_server_inference_time_ms": 45.89,
+    "avg_network_overhead_ms": 410.87,
+    "throughput_images_per_sec": 2.1,
+    "baseline_comparison": {
+      "baseline_avg_ms": 83.66,
+      "loopback_avg_ms": 456.76,
+      "difference_ms": 373.1,
+      "difference_percent": 445.98
+    },
+    "resources": {
+      "initial": {
+        "cpu_percent": 4.2,
+        "memory_percent": 59.0,
+        "memory_used_gb": 18.52
+      },
+      "final": {
+        "cpu_percent": 1.6,
+        "memory_percent": 59.0,
+        "memory_used_gb": 18.5
+      },
+      "avg_during_test": {
+        "cpu_percent": 2.15,
+        "memory_used_gb": 18.58
+      }
+    },
+    "individual_requests": [
+      {
+        "request_id": 0,
+        "loopback_time_ms": 420.4545021057129,
+        "server_inference_time_ms": 49.179792404174805,
+        "network_overhead_ms": 371.2747097015381,
+        "confidence": 0.5438145995140076,
+        "top_class": 885
+      },
+      {
+        "request_id": 1,
+        "loopback_time_ms": 390.61760902404785,
+        "server_inference_time_ms": 46.37289047241211,
+        "network_overhead_ms": 344.24471855163574,
+        "confidence": 0.3632325828075409,
+        "top_class": 885
+      },
+      {
+        "request_id": 2,
+        "loopback_time_ms": 441.882848739624,
+        "server_inference_time_ms": 45.64404487609863,
+        "network_overhead_ms": 396.2388038635254,
+        "confidence": 0.41532301902770996,
+        "top_class": 885
+      },
+      {
+        "request_id": 3,
+        "loopback_time_ms": 471.1639881134033,
+        "server_inference_time_ms": 44.577836990356445,
+        "network_overhead_ms": 426.5861511230469,
+        "confidence": 0.41853222250938416,
+        "top_class": 885
+      },
+      {
+        "request_id": 4,
+        "loopback_time_ms": 473.9341735839844,
+        "server_inference_time_ms": 43.8539981842041,
+        "network_overhead_ms": 430.0801753997803,
+        "confidence": 0.4105839729309082,
+        "top_class": 885
+      },
+      {
+        "request_id": 5,
+        "loopback_time_ms": 408.1127643585205,
+        "server_inference_time_ms": 45.400142669677734,
+        "network_overhead_ms": 362.7126216888428,
+        "confidence": 0.3974796533584595,
+        "top_class": 885
+      },
+      {
+        "request_id": 6,
+        "loopback_time_ms": 457.59081840515137,
+        "server_inference_time_ms": 44.001102447509766,
+        "network_overhead_ms": 413.5897159576416,
+        "confidence": 0.5453410148620605,
+        "top_class": 885
+      },
+      {
+        "request_id": 7,
+        "loopback_time_ms": 353.9743423461914,
+        "server_inference_time_ms": 45.12310028076172,
+        "network_overhead_ms": 308.8512420654297,
+        "confidence": 0.30593451857566833,
+        "top_class": 885
+      },
+      {
+        "request_id": 8,
+        "loopback_time_ms": 437.8700256347656,
+        "server_inference_time_ms": 43.64323616027832,
+        "network_overhead_ms": 394.2267894744873,
+        "confidence": 0.4156603515148163,
+        "top_class": 885
+      },
+      {
+        "request_id": 9,
+        "loopback_time_ms": 371.68335914611816,
+        "server_inference_time_ms": 48.32100868225098,
+        "network_overhead_ms": 323.3623504638672,
+        "confidence": 0.4755485951900482,
+        "top_class": 885
+      },
+      {
+        "request_id": 10,
+        "loopback_time_ms": 494.9314594268799,
+        "server_inference_time_ms": 46.70572280883789,
+        "network_overhead_ms": 448.225736618042,
+        "confidence": 0.43058642745018005,
+        "top_class": 885
+      },
+      {
+        "request_id": 11,
+        "loopback_time_ms": 414.02435302734375,
+        "server_inference_time_ms": 43.727874755859375,
+        "network_overhead_ms": 370.2964782714844,
+        "confidence": 0.5624393820762634,
+        "top_class": 885
+      },
+      {
+        "request_id": 12,
+        "loopback_time_ms": 369.79055404663086,
+        "server_inference_time_ms": 46.759843826293945,
+        "network_overhead_ms": 323.0307102203369,
+        "confidence": 0.5429689288139343,
+        "top_class": 885
+      },
+      {
+        "request_id": 13,
+        "loopback_time_ms": 433.657169342041,
+        "server_inference_time_ms": 46.04697227478027,
+        "network_overhead_ms": 387.61019706726074,
+        "confidence": 0.5592361688613892,
+        "top_class": 885
+      },
+      {
+        "request_id": 14,
+        "loopback_time_ms": 350.52943229675293,
+        "server_inference_time_ms": 45.3639030456543,
+        "network_overhead_ms": 305.16552925109863,
+        "confidence": 0.5647585391998291,
+        "top_class": 885
+      },
+      {
+        "request_id": 15,
+        "loopback_time_ms": 923.0828285217285,
+        "server_inference_time_ms": 44.84081268310547,
+        "network_overhead_ms": 878.242015838623,
+        "confidence": 0.5237134695053101,
+        "top_class": 885
+      },
+      {
+        "request_id": 16,
+        "loopback_time_ms": 430.24277687072754,
+        "server_inference_time_ms": 45.54104804992676,
+        "network_overhead_ms": 384.7017288208008,
+        "confidence": 0.46666279435157776,
+        "top_class": 885
+      },
+      {
+        "request_id": 17,
+        "loopback_time_ms": 459.6884250640869,
+        "server_inference_time_ms": 46.642303466796875,
+        "network_overhead_ms": 413.04612159729004,
+        "confidence": 0.43668532371520996,
+        "top_class": 885
+      },
+      {
+        "request_id": 18,
+        "loopback_time_ms": 366.3678169250488,
+        "server_inference_time_ms": 47.20616340637207,
+        "network_overhead_ms": 319.16165351867676,
+        "confidence": 0.4623558521270752,
+        "top_class": 885
+      },
+      {
+        "request_id": 19,
+        "loopback_time_ms": 421.64158821105957,
+        "server_inference_time_ms": 43.87402534484863,
+        "network_overhead_ms": 377.76756286621094,
+        "confidence": 0.45802271366119385,
+        "top_class": 885
+      },
+      {
+        "request_id": 20,
+        "loopback_time_ms": 827.4686336517334,
+        "server_inference_time_ms": 47.62625694274902,
+        "network_overhead_ms": 779.8423767089844,
+        "confidence": 0.4870573878288269,
+        "top_class": 885
+      },
+      {
+        "request_id": 21,
+        "loopback_time_ms": 482.757568359375,
+        "server_inference_time_ms": 44.86989974975586,
+        "network_overhead_ms": 437.88766860961914,
+        "confidence": 0.3412400782108307,
+        "top_class": 885
+      },
+      {
+        "request_id": 22,
+        "loopback_time_ms": 331.55274391174316,
+        "server_inference_time_ms": 43.59698295593262,
+        "network_overhead_ms": 287.95576095581055,
+        "confidence": 0.5260983109474182,
+        "top_class": 885
+      },
+      {
+        "request_id": 23,
+        "loopback_time_ms": 458.21571350097656,
+        "server_inference_time_ms": 47.46890068054199,
+        "network_overhead_ms": 410.74681282043457,
+        "confidence": 0.3472379148006439,
+        "top_class": 885
+      },
+      {
+        "request_id": 24,
+        "loopback_time_ms": 413.38062286376953,
+        "server_inference_time_ms": 46.58198356628418,
+        "network_overhead_ms": 366.79863929748535,
+        "confidence": 0.41838058829307556,
+        "top_class": 885
+      },
+      {
+        "request_id": 25,
+        "loopback_time_ms": 427.7794361114502,
+        "server_inference_time_ms": 44.385671615600586,
+        "network_overhead_ms": 383.3937644958496,
+        "confidence": 0.5722388029098511,
+        "top_class": 885
+      },
+      {
+        "request_id": 26,
+        "loopback_time_ms": 391.40963554382324,
+        "server_inference_time_ms": 46.643972396850586,
+        "network_overhead_ms": 344.76566314697266,
+        "confidence": 0.5119785070419312,
+        "top_class": 885
+      },
+      {
+        "request_id": 27,
+        "loopback_time_ms": 448.58360290527344,
+        "server_inference_time_ms": 43.76792907714844,
+        "network_overhead_ms": 404.815673828125,
+        "confidence": 0.5138716101646423,
+        "top_class": 885
+      },
+      {
+        "request_id": 28,
+        "loopback_time_ms": 412.06812858581543,
+        "server_inference_time_ms": 47.563791275024414,
+        "network_overhead_ms": 364.504337310791,
+        "confidence": 0.5560810565948486,
+        "top_class": 885
+      },
+      {
+        "request_id": 29,
+        "loopback_time_ms": 378.8566589355469,
+        "server_inference_time_ms": 45.12834548950195,
+        "network_overhead_ms": 333.7283134460449,
+        "confidence": 0.4806811511516571,
+        "top_class": 885
+      },
+      {
+        "request_id": 30,
+        "loopback_time_ms": 455.4440975189209,
+        "server_inference_time_ms": 46.28396034240723,
+        "network_overhead_ms": 409.1601371765137,
+        "confidence": 0.5179867148399353,
+        "top_class": 885
+      },
+      {
+        "request_id": 31,
+        "loopback_time_ms": 371.49596214294434,
+        "server_inference_time_ms": 47.26386070251465,
+        "network_overhead_ms": 324.2321014404297,
+        "confidence": 0.45509451627731323,
+        "top_class": 885
+      },
+      {
+        "request_id": 32,
+        "loopback_time_ms": 421.860933303833,
+        "server_inference_time_ms": 45.69196701049805,
+        "network_overhead_ms": 376.16896629333496,
+        "confidence": 0.3807654082775116,
+        "top_class": 885
+      },
+      {
+        "request_id": 33,
+        "loopback_time_ms": 389.007568359375,
+        "server_inference_time_ms": 45.17698287963867,
+        "network_overhead_ms": 343.8305854797363,
+        "confidence": 0.5036986470222473,
+        "top_class": 885
+      },
+      {
+        "request_id": 34,
+        "loopback_time_ms": 399.6450901031494,
+        "server_inference_time_ms": 45.92609405517578,
+        "network_overhead_ms": 353.71899604797363,
+        "confidence": 0.4212664067745209,
+        "top_class": 885
+      },
+      {
+        "request_id": 35,
+        "loopback_time_ms": 380.0361156463623,
+        "server_inference_time_ms": 43.975830078125,
+        "network_overhead_ms": 336.0602855682373,
+        "confidence": 0.4111176133155823,
+        "top_class": 885
+      },
+      {
+        "request_id": 36,
+        "loopback_time_ms": 354.5386791229248,
+        "server_inference_time_ms": 44.09980773925781,
+        "network_overhead_ms": 310.438871383667,
+        "confidence": 0.4622282087802887,
+        "top_class": 885
+      },
+      {
+        "request_id": 37,
+        "loopback_time_ms": 431.4403533935547,
+        "server_inference_time_ms": 46.222686767578125,
+        "network_overhead_ms": 385.21766662597656,
+        "confidence": 0.42211589217185974,
+        "top_class": 885
+      },
+      {
+        "request_id": 38,
+        "loopback_time_ms": 397.07207679748535,
+        "server_inference_time_ms": 45.4409122467041,
+        "network_overhead_ms": 351.63116455078125,
+        "confidence": 0.47169485688209534,
+        "top_class": 885
+      },
+      {
+        "request_id": 39,
+        "loopback_time_ms": 429.3200969696045,
+        "server_inference_time_ms": 44.851064682006836,
+        "network_overhead_ms": 384.46903228759766,
+        "confidence": 0.45625361800193787,
+        "top_class": 885
+      },
+      {
+        "request_id": 40,
+        "loopback_time_ms": 430.80782890319824,
+        "server_inference_time_ms": 47.73688316345215,
+        "network_overhead_ms": 383.0709457397461,
+        "confidence": 0.4396620988845825,
+        "top_class": 885
+      },
+      {
+        "request_id": 41,
+        "loopback_time_ms": 448.48108291625977,
+        "server_inference_time_ms": 45.39322853088379,
+        "network_overhead_ms": 403.087854385376,
+        "confidence": 0.43274641036987305,
+        "top_class": 885
+      },
+      {
+        "request_id": 42,
+        "loopback_time_ms": 401.10301971435547,
+        "server_inference_time_ms": 50.008296966552734,
+        "network_overhead_ms": 351.09472274780273,
+        "confidence": 0.28138068318367004,
+        "top_class": 885
+      },
+      {
+        "request_id": 43,
+        "loopback_time_ms": 418.61462593078613,
+        "server_inference_time_ms": 45.762062072753906,
+        "network_overhead_ms": 372.8525638580322,
+        "confidence": 0.5288270115852356,
+        "top_class": 885
+      },
+      {
+        "request_id": 44,
+        "loopback_time_ms": 350.94499588012695,
+        "server_inference_time_ms": 46.37789726257324,
+        "network_overhead_ms": 304.5670986175537,
+        "confidence": 0.3759141266345978,
+        "top_class": 885
+      },
+      {
+        "request_id": 45,
+        "loopback_time_ms": 471.55189514160156,
+        "server_inference_time_ms": 44.47817802429199,
+        "network_overhead_ms": 427.07371711730957,
+        "confidence": 0.39100024104118347,
+        "top_class": 885
+      },
+      {
+        "request_id": 46,
+        "loopback_time_ms": 361.58227920532227,
+        "server_inference_time_ms": 46.03290557861328,
+        "network_overhead_ms": 315.549373626709,
+        "confidence": 0.44891542196273804,
+        "top_class": 885
+      },
+      {
+        "request_id": 47,
+        "loopback_time_ms": 426.3441562652588,
+        "server_inference_time_ms": 43.67494583129883,
+        "network_overhead_ms": 382.66921043395996,
+        "confidence": 0.3934365212917328,
+        "top_class": 885
+      },
+      {
+        "request_id": 48,
+        "loopback_time_ms": 411.12589836120605,
+        "server_inference_time_ms": 47.020912170410156,
+        "network_overhead_ms": 364.1049861907959,
+        "confidence": 0.6159483790397644,
+        "top_class": 885
+      },
+      {
+        "request_id": 49,
+        "loopback_time_ms": 441.23220443725586,
+        "server_inference_time_ms": 45.007944107055664,
+        "network_overhead_ms": 396.2242603302002,
+        "confidence": 0.523576021194458,
+        "top_class": 885
+      },
+      {
+        "request_id": 50,
+        "loopback_time_ms": 403.2299518585205,
+        "server_inference_time_ms": 47.46222496032715,
+        "network_overhead_ms": 355.76772689819336,
+        "confidence": 0.4870733320713043,
+        "top_class": 885
+      },
+      {
+        "request_id": 51,
+        "loopback_time_ms": 418.29776763916016,
+        "server_inference_time_ms": 47.206878662109375,
+        "network_overhead_ms": 371.0908889770508,
+        "confidence": 0.44929051399230957,
+        "top_class": 885
+      },
+      {
+        "request_id": 52,
+        "loopback_time_ms": 1037.1570587158203,
+        "server_inference_time_ms": 48.65598678588867,
+        "network_overhead_ms": 988.5010719299316,
+        "confidence": 0.4320831000804901,
+        "top_class": 885
+      },
+      {
+        "request_id": 53,
+        "loopback_time_ms": 403.6686420440674,
+        "server_inference_time_ms": 49.09491539001465,
+        "network_overhead_ms": 354.57372665405273,
+        "confidence": 0.3256005048751831,
+        "top_class": 885
+      },
+      {
+        "request_id": 54,
+        "loopback_time_ms": 400.698184967041,
+        "server_inference_time_ms": 43.81203651428223,
+        "network_overhead_ms": 356.8861484527588,
+        "confidence": 0.42794889211654663,
+        "top_class": 885
+      },
+      {
+        "request_id": 55,
+        "loopback_time_ms": 374.70507621765137,
+        "server_inference_time_ms": 46.61679267883301,
+        "network_overhead_ms": 328.08828353881836,
+        "confidence": 0.5891209244728088,
+        "top_class": 885
+      },
+      {
+        "request_id": 56,
+        "loopback_time_ms": 384.5863342285156,
+        "server_inference_time_ms": 43.985843658447266,
+        "network_overhead_ms": 340.60049057006836,
+        "confidence": 0.4374047517776489,
+        "top_class": 885
+      },
+      {
+        "request_id": 57,
+        "loopback_time_ms": 404.9663543701172,
+        "server_inference_time_ms": 48.44403266906738,
+        "network_overhead_ms": 356.5223217010498,
+        "confidence": 0.6403847932815552,
+        "top_class": 885
+      },
+      {
+        "request_id": 58,
+        "loopback_time_ms": 854.823112487793,
+        "server_inference_time_ms": 48.3551025390625,
+        "network_overhead_ms": 806.4680099487305,
+        "confidence": 0.3906419277191162,
+        "top_class": 885
+      },
+      {
+        "request_id": 59,
+        "loopback_time_ms": 435.6999397277832,
+        "server_inference_time_ms": 44.943809509277344,
+        "network_overhead_ms": 390.75613021850586,
+        "confidence": 0.411746621131897,
+        "top_class": 885
+      },
+      {
+        "request_id": 60,
+        "loopback_time_ms": 404.5071601867676,
+        "server_inference_time_ms": 49.018144607543945,
+        "network_overhead_ms": 355.48901557922363,
+        "confidence": 0.5595375895500183,
+        "top_class": 885
+      },
+      {
+        "request_id": 61,
+        "loopback_time_ms": 411.271333694458,
+        "server_inference_time_ms": 44.26002502441406,
+        "network_overhead_ms": 367.01130867004395,
+        "confidence": 0.5841495394706726,
+        "top_class": 885
+      },
+      {
+        "request_id": 62,
+        "loopback_time_ms": 915.5263900756836,
+        "server_inference_time_ms": 57.26981163024902,
+        "network_overhead_ms": 858.2565784454346,
+        "confidence": 0.5567470788955688,
+        "top_class": 885
+      },
+      {
+        "request_id": 63,
+        "loopback_time_ms": 437.0710849761963,
+        "server_inference_time_ms": 44.260263442993164,
+        "network_overhead_ms": 392.8108215332031,
+        "confidence": 0.3546658158302307,
+        "top_class": 885
+      },
+      {
+        "request_id": 64,
+        "loopback_time_ms": 405.16138076782227,
+        "server_inference_time_ms": 44.83819007873535,
+        "network_overhead_ms": 360.3231906890869,
+        "confidence": 0.3759722113609314,
+        "top_class": 885
+      },
+      {
+        "request_id": 65,
+        "loopback_time_ms": 408.2019329071045,
+        "server_inference_time_ms": 43.859004974365234,
+        "network_overhead_ms": 364.34292793273926,
+        "confidence": 0.5521575212478638,
+        "top_class": 885
+      },
+      {
+        "request_id": 66,
+        "loopback_time_ms": 394.012451171875,
+        "server_inference_time_ms": 47.01995849609375,
+        "network_overhead_ms": 346.99249267578125,
+        "confidence": 0.5312960147857666,
+        "top_class": 885
+      },
+      {
+        "request_id": 67,
+        "loopback_time_ms": 435.6706142425537,
+        "server_inference_time_ms": 44.467926025390625,
+        "network_overhead_ms": 391.2026882171631,
+        "confidence": 0.5349982380867004,
+        "top_class": 885
+      },
+      {
+        "request_id": 68,
+        "loopback_time_ms": 399.2593288421631,
+        "server_inference_time_ms": 47.37687110900879,
+        "network_overhead_ms": 351.8824577331543,
+        "confidence": 0.5642829537391663,
+        "top_class": 885
+      },
+      {
+        "request_id": 69,
+        "loopback_time_ms": 446.9106197357178,
+        "server_inference_time_ms": 46.396732330322266,
+        "network_overhead_ms": 400.5138874053955,
+        "confidence": 0.34038686752319336,
+        "top_class": 885
+      },
+      {
+        "request_id": 70,
+        "loopback_time_ms": 391.77846908569336,
+        "server_inference_time_ms": 44.87419128417969,
+        "network_overhead_ms": 346.9042778015137,
+        "confidence": 0.44937750697135925,
+        "top_class": 885
+      },
+      {
+        "request_id": 71,
+        "loopback_time_ms": 454.3569087982178,
+        "server_inference_time_ms": 45.819997787475586,
+        "network_overhead_ms": 408.5369110107422,
+        "confidence": 0.5270652770996094,
+        "top_class": 885
+      },
+      {
+        "request_id": 72,
+        "loopback_time_ms": 383.1214904785156,
+        "server_inference_time_ms": 46.05913162231445,
+        "network_overhead_ms": 337.0623588562012,
+        "confidence": 0.5045215487480164,
+        "top_class": 885
+      },
+      {
+        "request_id": 73,
+        "loopback_time_ms": 447.7677345275879,
+        "server_inference_time_ms": 46.17595672607422,
+        "network_overhead_ms": 401.5917778015137,
+        "confidence": 0.46638932824134827,
+        "top_class": 885
+      },
+      {
+        "request_id": 74,
+        "loopback_time_ms": 411.84544563293457,
+        "server_inference_time_ms": 47.473907470703125,
+        "network_overhead_ms": 364.37153816223145,
+        "confidence": 0.3071901202201843,
+        "top_class": 885
+      },
+      {
+        "request_id": 75,
+        "loopback_time_ms": 472.86438941955566,
+        "server_inference_time_ms": 46.1728572845459,
+        "network_overhead_ms": 426.69153213500977,
+        "confidence": 0.518872857093811,
+        "top_class": 885
+      },
+      {
+        "request_id": 76,
+        "loopback_time_ms": 392.04931259155273,
+        "server_inference_time_ms": 46.33903503417969,
+        "network_overhead_ms": 345.71027755737305,
+        "confidence": 0.41440507769584656,
+        "top_class": 885
+      },
+      {
+        "request_id": 77,
+        "loopback_time_ms": 391.3464546203613,
+        "server_inference_time_ms": 47.782182693481445,
+        "network_overhead_ms": 343.5642719268799,
+        "confidence": 0.4436071217060089,
+        "top_class": 885
+      },
+      {
+        "request_id": 78,
+        "loopback_time_ms": 617.1925067901611,
+        "server_inference_time_ms": 47.06931114196777,
+        "network_overhead_ms": 570.1231956481934,
+        "confidence": 0.4697047173976898,
+        "top_class": 885
+      },
+      {
+        "request_id": 79,
+        "loopback_time_ms": 1339.902400970459,
+        "server_inference_time_ms": 47.33014106750488,
+        "network_overhead_ms": 1292.572259902954,
+        "confidence": 0.3991391360759735,
+        "top_class": 885
+      },
+      {
+        "request_id": 80,
+        "loopback_time_ms": 716.3126468658447,
+        "server_inference_time_ms": 46.08511924743652,
+        "network_overhead_ms": 670.2275276184082,
+        "confidence": 0.37106969952583313,
+        "top_class": 885
+      },
+      {
+        "request_id": 81,
+        "loopback_time_ms": 449.9995708465576,
+        "server_inference_time_ms": 46.5700626373291,
+        "network_overhead_ms": 403.4295082092285,
+        "confidence": 0.5866240859031677,
+        "top_class": 885
+      },
+      {
+        "request_id": 82,
+        "loopback_time_ms": 455.1708698272705,
+        "server_inference_time_ms": 45.8528995513916,
+        "network_overhead_ms": 409.3179702758789,
+        "confidence": 0.5420719385147095,
+        "top_class": 885
+      },
+      {
+        "request_id": 83,
+        "loopback_time_ms": 389.7538185119629,
+        "server_inference_time_ms": 43.38884353637695,
+        "network_overhead_ms": 346.36497497558594,
+        "confidence": 0.39954742789268494,
+        "top_class": 885
+      },
+      {
+        "request_id": 84,
+        "loopback_time_ms": 368.6845302581787,
+        "server_inference_time_ms": 46.30017280578613,
+        "network_overhead_ms": 322.3843574523926,
+        "confidence": 0.5155133008956909,
+        "top_class": 885
+      },
+      {
+        "request_id": 85,
+        "loopback_time_ms": 429.93998527526855,
+        "server_inference_time_ms": 43.99681091308594,
+        "network_overhead_ms": 385.9431743621826,
+        "confidence": 0.4182966351509094,
+        "top_class": 885
+      },
+      {
+        "request_id": 86,
+        "loopback_time_ms": 498.3186721801758,
+        "server_inference_time_ms": 45.42899131774902,
+        "network_overhead_ms": 452.88968086242676,
+        "confidence": 0.41233691573143005,
+        "top_class": 885
+      },
+      {
+        "request_id": 87,
+        "loopback_time_ms": 442.81554222106934,
+        "server_inference_time_ms": 44.34609413146973,
+        "network_overhead_ms": 398.4694480895996,
+        "confidence": 0.47059521079063416,
+        "top_class": 885
+      },
+      {
+        "request_id": 88,
+        "loopback_time_ms": 402.559757232666,
+        "server_inference_time_ms": 45.738935470581055,
+        "network_overhead_ms": 356.82082176208496,
+        "confidence": 0.3949432373046875,
+        "top_class": 885
+      },
+      {
+        "request_id": 89,
+        "loopback_time_ms": 523.9477157592773,
+        "server_inference_time_ms": 44.35396194458008,
+        "network_overhead_ms": 479.59375381469727,
+        "confidence": 0.5040538907051086,
+        "top_class": 885
+      },
+      {
+        "request_id": 90,
+        "loopback_time_ms": 419.3143844604492,
+        "server_inference_time_ms": 45.10903358459473,
+        "network_overhead_ms": 374.2053508758545,
+        "confidence": 0.536371648311615,
+        "top_class": 885
+      },
+      {
+        "request_id": 91,
+        "loopback_time_ms": 470.37696838378906,
+        "server_inference_time_ms": 43.5948371887207,
+        "network_overhead_ms": 426.78213119506836,
+        "confidence": 0.5386880040168762,
+        "top_class": 885
+      },
+      {
+        "request_id": 92,
+        "loopback_time_ms": 379.4865608215332,
+        "server_inference_time_ms": 46.08583450317383,
+        "network_overhead_ms": 333.4007263183594,
+        "confidence": 0.5579176545143127,
+        "top_class": 885
+      },
+      {
+        "request_id": 93,
+        "loopback_time_ms": 466.0675525665283,
+        "server_inference_time_ms": 43.65205764770508,
+        "network_overhead_ms": 422.41549491882324,
+        "confidence": 0.5094648003578186,
+        "top_class": 885
+      },
+      {
+        "request_id": 94,
+        "loopback_time_ms": 397.1691131591797,
+        "server_inference_time_ms": 45.660972595214844,
+        "network_overhead_ms": 351.50814056396484,
+        "confidence": 0.44075366854667664,
+        "top_class": 885
+      },
+      {
+        "request_id": 95,
+        "loopback_time_ms": 456.22801780700684,
+        "server_inference_time_ms": 43.87092590332031,
+        "network_overhead_ms": 412.3570919036865,
+        "confidence": 0.42243286967277527,
+        "top_class": 885
+      },
+      {
+        "request_id": 96,
+        "loopback_time_ms": 439.27741050720215,
+        "server_inference_time_ms": 44.58308219909668,
+        "network_overhead_ms": 394.69432830810547,
+        "confidence": 0.4794091284275055,
+        "top_class": 885
+      },
+      {
+        "request_id": 97,
+        "loopback_time_ms": 406.8784713745117,
+        "server_inference_time_ms": 44.45290565490723,
+        "network_overhead_ms": 362.4255657196045,
+        "confidence": 0.3479975461959839,
+        "top_class": 885
+      },
+      {
+        "request_id": 98,
+        "loopback_time_ms": 395.0626850128174,
+        "server_inference_time_ms": 45.9439754486084,
+        "network_overhead_ms": 349.118709564209,
+        "confidence": 0.6137019991874695,
+        "top_class": 885
+      },
+      {
+        "request_id": 99,
+        "loopback_time_ms": 436.40613555908203,
+        "server_inference_time_ms": 45.01199722290039,
+        "network_overhead_ms": 391.39413833618164,
+        "confidence": 0.43873798847198486,
+        "top_class": 885
+      }
+    ]
+  }
+}

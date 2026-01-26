@@ -4,10 +4,18 @@
 This script evaluates the performance capabilities of local execution ("Edge") for AI inference using MobileNetV2 on different laptop configurations.
 
 ## Requirements
+
+### Task 1 (Baseline Performance)
 - Python 3.8 or higher
 - TensorFlow 2.10 or higher
 - NumPy
 - psutil
+
+### Task 2 (Code Offloading) - Additional Dependencies
+- FastAPI 0.104 or higher
+- Uvicorn 0.24 or higher
+- Requests 2.28 or higher
+- Pydantic 2.0 or higher
 
 ## Installation
 
@@ -16,7 +24,226 @@ This script evaluates the performance capabilities of local execution ("Edge") f
 pip install -r requirements.txt
 ```
 
-## Running the Benchmark
+---
+
+## Task 2: Code Offloading (Client-Server Architecture)
+
+### Overview
+Task 2 implements code offloading by splitting the inference workload between an edge client and a surrogate server. The client generates images and sends them to the server for processing, then measures the end-to-end latency compared to local processing (Task 1 baseline).
+
+**Architecture:**
+```
+┌──────────────────┐                    ┌──────────────────┐
+│  Client (Edge)   │ ──── HTTP ────────▶│ Server (Surrogate│
+│                  │ ◀─── JSON ─────────│                  │
+│ - Generate images│                    │ - MobileNetV2    │
+│ - Send POST req  │                    │ - Inference      │
+│ - Measure latency│                    │ - Return results │
+└──────────────────┘                    └──────────────────┘
+```
+
+### Quick Start
+
+**You need TWO terminals for Task 2:**
+
+**Terminal 1: Start the Server**
+```bash
+# Using virtual environment
+.venv/Scripts/python.exe -m uvicorn server_surrogate:app --host 0.0.0.0 --port 8000
+
+# Or without venv
+python -m uvicorn server_surrogate:app --host 0.0.0.0 --port 8000
+```
+
+Expected output:
+```
+Initializing MobileNetV2 model...
+Model loaded in 1.70 seconds
+Performing warm-up inference...
+Warm-up complete
+
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+```
+
+**Terminal 2: Run the Client**
+```bash
+# Using virtual environment
+.venv/Scripts/python.exe client_edge.py
+
+# Or without venv
+python client_edge.py
+```
+
+### What Each Component Does
+
+**Server (`server_surrogate.py`):**
+1. Initializes MobileNetV2 model once at startup
+2. Creates `/predict` endpoint that accepts POST requests
+3. Receives image data as JSON (1x224x224x3 nested list)
+4. Performs model inference
+5. Returns predictions with timing metrics
+
+**Client (`client_edge.py`):**
+1. Generates 100 random images (same as Task 1)
+2. Converts NumPy images to Python lists for JSON serialization
+3. Sends POST requests to server
+4. Measures **"Sending Request" → "Receiving Response"** time (loopback time)
+5. Records client resource usage (CPU, memory)
+6. Compares results with Task 1 baseline
+
+### Server Endpoints
+
+The FastAPI server provides these endpoints:
+
+```
+GET  /          - Root endpoint with API information
+GET  /health    - Health check endpoint
+POST /predict   - Image classification endpoint
+GET  /docs      - Interactive API documentation (Swagger UI)
+```
+
+### Testing the Server
+
+**Method 1: Automatic API Documentation**
+```
+Open browser: http://localhost:8000/docs
+```
+This opens Swagger UI where you can interactively test the `/predict` endpoint.
+
+**Method 2: Health Check**
+```bash
+curl http://localhost:8000/health
+```
+Expected response:
+```json
+{"status":"healthy","model_loaded":true,"timestamp":"2026-01-26T..."}
+```
+
+### Understanding Results
+
+**Key Metrics:**
+- **Loopback Time**: Total time from sending request to receiving response
+- **Server Inference Time**: Time the server spent on inference only
+- **Network Overhead**: Loopback Time - Server Inference Time
+- **Baseline Comparison**: How offloading compares to Task 1 local processing
+
+**Result File Structure (`output/offloading_results_*.json`):**
+```json
+{
+  "offloading_test": {
+    "num_images": 100,
+    "avg_loopback_time_ms": 105.2,
+    "avg_server_inference_time_ms": 85.0,
+    "avg_network_overhead_ms": 20.2,
+    "throughput_images_per_sec": 9.5,
+    "baseline_comparison": {
+      "baseline_avg_ms": 83.66,
+      "loopback_avg_ms": 105.2,
+      "difference_ms": 21.54,
+      "difference_percent": 25.7
+    },
+    "resources": {
+      "avg_during_test": {
+        "cpu_percent": 1.8,
+        "memory_used_gb": 5.2
+      }
+    }
+  }
+}
+```
+
+### Analysis: What Does the Time Difference Represent?
+
+The time difference between Task 2 (offloading) and Task 1 (baseline) represents the **cost of offloading**.
+
+**Overhead Breakdown:**
+```
+Loopback Time (105ms) = Server Inference (85ms) + Overhead (20ms)
+
+Overhead Components:
+1. NumPy → JSON serialization: ~8-10ms (client)
+2. Network send (localhost): ~1-2ms
+3. JSON → NumPy deserialization: ~2-3ms (server)
+4. Server inference: ~83-85ms (same as baseline)
+5. Response serialization: ~1-2ms (server)
+6. Network receive (localhost): ~1-2ms
+7. Response parsing: ~1-2ms (client)
+```
+
+**Trade-offs:**
+
+| Aspect | Impact |
+|--------|--------|
+| Latency | Increases by ~20-30% (offloading overhead) |
+| Client CPU | Drops by ~70% (no inference on edge) |
+| Client Memory | Drops by ~72% (no model loaded on edge) |
+| Network | Required (localhost for testing, WiFi/cellular in production) |
+| Privacy | Data leaves device (sent to server) |
+
+**When Offloading Makes Sense:**
+- Edge device has limited resources (weak CPU, low RAM, low battery)
+- Server has significantly better hardware (GPU vs CPU)
+- Multiple edge devices can share one powerful server
+- Battery conservation is more critical than low latency
+- Real-time latency is not critical (>100ms acceptable)
+
+**When Local Processing is Better:**
+- Low latency is critical (<50ms required)
+- Network is unreliable or unavailable
+- Privacy-sensitive data cannot leave device
+- Server doesn't have better hardware than edge device
+
+### Troubleshooting
+
+**Problem: Server won't start**
+```bash
+# Check if port 8000 is already in use
+netstat -ano | findstr :8000  # Windows
+lsof -i :8000                  # Linux/macOS
+
+# Use a different port if needed
+uvicorn server_surrogate:app --port 8001
+# Then update client_edge.py SERVER_URL to http://localhost:8001/predict
+```
+
+**Problem: Client can't connect to server**
+```bash
+# 1. Ensure server is running
+curl http://localhost:8000/health
+
+# 2. Check firewall settings (Windows Firewall, antivirus)
+
+# 3. Verify SERVER_URL in client_edge.py matches server port
+```
+
+**Problem: Unicode errors (Windows)**
+- Already fixed in current version
+- Uses `[OK]`/`[ERROR]` instead of Unicode checkmarks
+
+---
+
+## Comparing Task 1 vs Task 2
+
+| Aspect | Task 1 (Baseline - Local) | Task 2 (Code Offloading) |
+|--------|---------------------------|--------------------------|
+| **Execution** | All processing on edge device | Split: client generates, server infers |
+| **Latency** | 83.66ms | ~105ms (+25%) |
+| **Client CPU** | 6.6% average | <2% average (-70%) |
+| **Client Memory** | ~18GB used | ~5GB used (-72%) |
+| **Network Required** | No | Yes (localhost for testing) |
+| **Privacy** | Data stays local | Data sent to server |
+| **Model Location** | Loaded on edge device | Loaded on server only |
+| **Best Use Case** | Low latency, offline operation | Resource-constrained edge, battery savings |
+
+**Key Insight:**
+Task 2 adds ~20ms overhead (25% latency increase) but saves 70% CPU and 72% memory on the edge device. This trade-off is beneficial when:
+- Edge device is battery-powered or resource-constrained
+- Server has better hardware (e.g., GPU would make offloading 10-100x faster)
+- Multiple edge devices can share one server to amortize costs
+
+---
+
+## Running the Benchmark (Task 1)
 
 ### Quick Start
 ```bash

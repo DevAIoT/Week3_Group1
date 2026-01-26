@@ -1,0 +1,66 @@
+{
+  "system_info": {
+    "platform": "Windows-11-10.0.26100-SP0",
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "cpu_count": 22,
+    "ram_total_gb": 31.37,
+    "python_version": "3.12.11",
+    "tensorflow_version": "2.20.0",
+    "timestamp": "2026-01-26T11:37:41.894494",
+    "gpu_available": false,
+    "gpu_count": 0
+  },
+  "same_images_test": {
+    "num_images": 100,
+    "use_same_image": true,
+    "total_time_seconds": 17.075,
+    "avg_time_per_image_ms": 170.75,
+    "throughput_images_per_sec": 5.86,
+    "start_time": "2026-01-26T11:37:44.437159",
+    "end_time": "2026-01-26T11:38:01.512329",
+    "resources": {
+      "initial": {
+        "cpu_percent": 13.8,
+        "memory_percent": 59.2,
+        "memory_used_gb": 18.57
+      },
+      "final": {
+        "cpu_percent": 6.0,
+        "memory_percent": 59.2,
+        "memory_used_gb": 18.56
+      },
+      "average_during_inference": {
+        "cpu_percent": 8.28,
+        "memory_percent": 59.24,
+        "memory_used_gb": 18.58
+      }
+    }
+  },
+  "different_images_test": {
+    "num_images": 100,
+    "use_same_image": false,
+    "total_time_seconds": 14.826,
+    "avg_time_per_image_ms": 148.26,
+    "throughput_images_per_sec": 6.74,
+    "start_time": "2026-01-26T11:38:03.824075",
+    "end_time": "2026-01-26T11:38:18.649977",
+    "resources": {
+      "initial": {
+        "cpu_percent": 3.0,
+        "memory_percent": 59.4,
+        "memory_used_gb": 18.63
+      },
+      "final": {
+        "cpu_percent": 6.5,
+        "memory_percent": 59.2,
+        "memory_used_gb": 18.57
+      },
+      "average_during_inference": {
+        "cpu_percent": 5.11,
+        "memory_percent": 59.25,
+        "memory_used_gb": 18.59
+      }
+    }
+  },
+  "model_load_time": 1.1119029521942139
+}

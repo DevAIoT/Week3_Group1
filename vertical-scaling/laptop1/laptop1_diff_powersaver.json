@@ -1,0 +1,35 @@
+{
+  "system": {
+    "client_id": "laptop1",
+    "mode": "different",
+    "seed": 303603,
+    "platform": "macOS-26.2-arm64-arm-64bit",
+    "python_version": "3.9.6",
+    "tensorflow_version": "2.20.0",
+    "cpu_count_logical": 8,
+    "cpu_count_physical": 8,
+    "ram_total_gb": 16.0,
+    "tf_devices": [
+      "/device:CPU:0"
+    ]
+  },
+  "prediction_window": {
+    "start_time_wall": 1769397424.33847,
+    "end_time_wall": 1769397426.748273,
+    "duration_s": 2.4098073750000006,
+    "n_images": 100,
+    "batch_size": 1,
+    "avg_per_image_ms": 24.098073750000008,
+    "batch_latency_ms_avg": 24.094901690000007,
+    "batch_latency_ms_p95": 24.710418450000038,
+    "batch_latency_ms_peak": 25.162250000000164
+  },
+  "resources": {
+    "n_samples": 12,
+    "cpu_avg_percent": 25.075000000000003,
+    "cpu_peak_percent": 30.4,
+    "rss_avg_mb": 751.30859375,
+    "rss_peak_mb": 752.359375,
+    "sample_interval_s": 0.2
+  }
+}

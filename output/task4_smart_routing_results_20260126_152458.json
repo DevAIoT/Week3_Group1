@@ -1,0 +1,554 @@
+{
+  "system_info": {
+    "device_type": "edge",
+    "platform": "Windows-11-10.0.26100-SP0",
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "cpu_count": 22,
+    "ram_total_gb": 31.37,
+    "python_version": "3.12.11",
+    "timestamp": "2026-01-26T15:24:29.624599"
+  },
+  "routing_config": {
+    "edge_threshold": 5462.0,
+    "fog_server_url": "http://172.20.10.2:8000/predict"
+  },
+  "smart_routing_test": {
+    "num_images": 50,
+    "num_successful": 50,
+    "num_failed": 0,
+    "total_time_seconds": 26.344,
+    "model_load_time_seconds": 0.94,
+    "distribution": {
+      "num_local": 24,
+      "num_fog": 0,
+      "num_cloud": 26,
+      "percent_local": 48.0,
+      "percent_fog": 0.0,
+      "percent_cloud": 52.0
+    },
+    "latency": {
+      "avg_local_ms": 140.46,
+      "avg_fog_ms": null,
+      "avg_cloud_ms": 861.41,
+      "avg_total_ms": 515.35
+    },
+    "resources": {
+      "initial": {
+        "cpu_percent": 8.4,
+        "memory_percent": 62.9,
+        "memory_used_gb": 19.73
+      },
+      "final": {
+        "cpu_percent": 6.8,
+        "memory_percent": 63.1,
+        "memory_used_gb": 19.81
+      },
+      "avg_during_test": {
+        "cpu_percent": 11.22,
+        "memory_used_gb": 19.74
+      }
+    },
+    "individual_requests": [
+      {
+        "request_id": 0,
+        "complexity": 5452.255859375,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 142.26,
+        "inference_time_ms": 142.26,
+        "confidence": 0.5438145399093628,
+        "top_class": 885
+      },
+      {
+        "request_id": 1,
+        "complexity": 5438.5078125,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 125.84,
+        "inference_time_ms": 125.84,
+        "confidence": 0.36323317885398865,
+        "top_class": 885
+      },
+      {
+        "request_id": 2,
+        "complexity": 5459.84375,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 122.57,
+        "inference_time_ms": 122.57,
+        "confidence": 0.415322870016098,
+        "top_class": 885
+      },
+      {
+        "request_id": 3,
+        "complexity": 5469.41943359375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 825.34,
+        "inference_time_ms": 47.8,
+        "confidence": 0.1435651034116745,
+        "top_class": 599
+      },
+      {
+        "request_id": 4,
+        "complexity": 5482.45556640625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 572.37,
+        "inference_time_ms": 48.61,
+        "confidence": 0.2521723806858063,
+        "top_class": 599
+      },
+      {
+        "request_id": 5,
+        "complexity": 5467.201171875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 874.19,
+        "inference_time_ms": 42.92,
+        "confidence": 0.19186493754386902,
+        "top_class": 599
+      },
+      {
+        "request_id": 6,
+        "complexity": 5465.85693359375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 723.93,
+        "inference_time_ms": 43.5,
+        "confidence": 0.3089867830276489,
+        "top_class": 599
+      },
+      {
+        "request_id": 7,
+        "complexity": 5476.91455078125,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 585.83,
+        "inference_time_ms": 46.29,
+        "confidence": 0.2504664659500122,
+        "top_class": 599
+      },
+      {
+        "request_id": 8,
+        "complexity": 5463.5869140625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 835.09,
+        "inference_time_ms": 43.14,
+        "confidence": 0.22160165011882782,
+        "top_class": 599
+      },
+      {
+        "request_id": 9,
+        "complexity": 5459.927734375,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 128.41,
+        "inference_time_ms": 128.41,
+        "confidence": 0.47554972767829895,
+        "top_class": 885
+      },
+      {
+        "request_id": 10,
+        "complexity": 5479.8818359375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 873.65,
+        "inference_time_ms": 47.64,
+        "confidence": 0.18814930319786072,
+        "top_class": 599
+      },
+      {
+        "request_id": 11,
+        "complexity": 5452.7822265625,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 135.87,
+        "inference_time_ms": 135.87,
+        "confidence": 0.5624398589134216,
+        "top_class": 885
+      },
+      {
+        "request_id": 12,
+        "complexity": 5473.14306640625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 1748.31,
+        "inference_time_ms": 45.11,
+        "confidence": 0.19552432000637054,
+        "top_class": 599
+      },
+      {
+        "request_id": 13,
+        "complexity": 5452.19384765625,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 162.11,
+        "inference_time_ms": 162.11,
+        "confidence": 0.5592371821403503,
+        "top_class": 885
+      },
+      {
+        "request_id": 14,
+        "complexity": 5450.85888671875,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 144.47,
+        "inference_time_ms": 144.47,
+        "confidence": 0.5647597908973694,
+        "top_class": 885
+      },
+      {
+        "request_id": 15,
+        "complexity": 5445.1962890625,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 116.01,
+        "inference_time_ms": 116.01,
+        "confidence": 0.5237147212028503,
+        "top_class": 885
+      },
+      {
+        "request_id": 16,
+        "complexity": 5464.37451171875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 590.71,
+        "inference_time_ms": 45.02,
+        "confidence": 0.21043933928012848,
+        "top_class": 737
+      },
+      {
+        "request_id": 17,
+        "complexity": 5446.9443359375,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 126.09,
+        "inference_time_ms": 126.09,
+        "confidence": 0.4366855025291443,
+        "top_class": 885
+      },
+      {
+        "request_id": 18,
+        "complexity": 5455.2978515625,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 115.21,
+        "inference_time_ms": 115.21,
+        "confidence": 0.46235567331314087,
+        "top_class": 885
+      },
+      {
+        "request_id": 19,
+        "complexity": 5466.34033203125,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 854.66,
+        "inference_time_ms": 43.44,
+        "confidence": 0.16982299089431763,
+        "top_class": 737
+      },
+      {
+        "request_id": 20,
+        "complexity": 5451.9541015625,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 128.06,
+        "inference_time_ms": 128.06,
+        "confidence": 0.4870554804801941,
+        "top_class": 885
+      },
+      {
+        "request_id": 21,
+        "complexity": 5471.236328125,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 764.04,
+        "inference_time_ms": 46.94,
+        "confidence": 0.2697681486606598,
+        "top_class": 599
+      },
+      {
+        "request_id": 22,
+        "complexity": 5450.12646484375,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 130.83,
+        "inference_time_ms": 130.83,
+        "confidence": 0.5261009335517883,
+        "top_class": 885
+      },
+      {
+        "request_id": 23,
+        "complexity": 5466.37646484375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 920.77,
+        "inference_time_ms": 44.06,
+        "confidence": 0.24668730795383453,
+        "top_class": 599
+      },
+      {
+        "request_id": 24,
+        "complexity": 5462.1240234375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 537.7,
+        "inference_time_ms": 47.23,
+        "confidence": 0.17499582469463348,
+        "top_class": 599
+      },
+      {
+        "request_id": 25,
+        "complexity": 5450.3232421875,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 145.2,
+        "inference_time_ms": 145.2,
+        "confidence": 0.5722392797470093,
+        "top_class": 885
+      },
+      {
+        "request_id": 26,
+        "complexity": 5476.59033203125,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 1228.66,
+        "inference_time_ms": 43.19,
+        "confidence": 0.1983828991651535,
+        "top_class": 599
+      },
+      {
+        "request_id": 27,
+        "complexity": 5483.232421875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 740.82,
+        "inference_time_ms": 49.15,
+        "confidence": 0.21071457862854004,
+        "top_class": 599
+      },
+      {
+        "request_id": 28,
+        "complexity": 5459.85546875,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 132.15,
+        "inference_time_ms": 132.15,
+        "confidence": 0.5560811161994934,
+        "top_class": 885
+      },
+      {
+        "request_id": 29,
+        "complexity": 5451.05029296875,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 136.45,
+        "inference_time_ms": 136.45,
+        "confidence": 0.48068076372146606,
+        "top_class": 885
+      },
+      {
+        "request_id": 30,
+        "complexity": 5466.23681640625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 1101.31,
+        "inference_time_ms": 42.91,
+        "confidence": 0.3776196837425232,
+        "top_class": 599
+      },
+      {
+        "request_id": 31,
+        "complexity": 5450.75927734375,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 157.69,
+        "inference_time_ms": 157.69,
+        "confidence": 0.45509472489356995,
+        "top_class": 885
+      },
+      {
+        "request_id": 32,
+        "complexity": 5453.89013671875,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 134.95,
+        "inference_time_ms": 134.95,
+        "confidence": 0.38076719641685486,
+        "top_class": 885
+      },
+      {
+        "request_id": 33,
+        "complexity": 5470.45654296875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 1213.64,
+        "inference_time_ms": 47.81,
+        "confidence": 0.24976864457130432,
+        "top_class": 599
+      },
+      {
+        "request_id": 34,
+        "complexity": 5471.53125,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 1215.09,
+        "inference_time_ms": 54.7,
+        "confidence": 0.23924840986728668,
+        "top_class": 599
+      },
+      {
+        "request_id": 35,
+        "complexity": 5468.900390625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 752.11,
+        "inference_time_ms": 47.36,
+        "confidence": 0.16083383560180664,
+        "top_class": 599
+      },
+      {
+        "request_id": 36,
+        "complexity": 5465.5576171875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 695.84,
+        "inference_time_ms": 49.33,
+        "confidence": 0.32517749071121216,
+        "top_class": 599
+      },
+      {
+        "request_id": 37,
+        "complexity": 5454.1982421875,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 135.3,
+        "inference_time_ms": 135.3,
+        "confidence": 0.42211687564849854,
+        "top_class": 885
+      },
+      {
+        "request_id": 38,
+        "complexity": 5469.47265625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 667.36,
+        "inference_time_ms": 48.03,
+        "confidence": 0.17876121401786804,
+        "top_class": 599
+      },
+      {
+        "request_id": 39,
+        "complexity": 5470.0888671875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 754.3,
+        "inference_time_ms": 48.75,
+        "confidence": 0.15177607536315918,
+        "top_class": 599
+      },
+      {
+        "request_id": 40,
+        "complexity": 5456.8486328125,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 176.2,
+        "inference_time_ms": 175.88,
+        "confidence": 0.43966230750083923,
+        "top_class": 885
+      },
+      {
+        "request_id": 41,
+        "complexity": 5457.90966796875,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 126.89,
+        "inference_time_ms": 126.89,
+        "confidence": 0.43274596333503723,
+        "top_class": 885
+      },
+      {
+        "request_id": 42,
+        "complexity": 5444.77001953125,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 233.09,
+        "inference_time_ms": 233.09,
+        "confidence": 0.2813819348812103,
+        "top_class": 885
+      },
+      {
+        "request_id": 43,
+        "complexity": 5461.36376953125,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 156.76,
+        "inference_time_ms": 156.76,
+        "confidence": 0.5288289785385132,
+        "top_class": 885
+      },
+      {
+        "request_id": 44,
+        "complexity": 5471.39208984375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 1050.39,
+        "inference_time_ms": 49.47,
+        "confidence": 0.18398113548755646,
+        "top_class": 599
+      },
+      {
+        "request_id": 45,
+        "complexity": 5456.33984375,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 129.45,
+        "inference_time_ms": 129.45,
+        "confidence": 0.391000896692276,
+        "top_class": 885
+      },
+      {
+        "request_id": 46,
+        "complexity": 5470.55419921875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 549.52,
+        "inference_time_ms": 47.4,
+        "confidence": 0.25614917278289795,
+        "top_class": 599
+      },
+      {
+        "request_id": 47,
+        "complexity": 5447.6796875,
+        "routing_decision": "local",
+        "inference_source": "local",
+        "latency_ms": 129.06,
+        "inference_time_ms": 129.06,
+        "confidence": 0.3934360146522522,
+        "top_class": 885
+      },
+      {
+        "request_id": 48,
+        "complexity": 5474.87646484375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 953.93,
+        "inference_time_ms": 43.85,
+        "confidence": 0.17754988372325897,
+        "top_class": 599
+      },
+      {
+        "request_id": 49,
+        "complexity": 5467.5537109375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 767.05,
+        "inference_time_ms": 47.64,
+        "confidence": 0.14863461256027222,
+        "top_class": 599
+      }
+    ]
+  }
+}

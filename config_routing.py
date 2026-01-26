@@ -4,8 +4,8 @@ Defines thresholds, URLs, and system parameters
 """
 
 # Complexity Thresholds
-EDGE_COMPLEXITY_THRESHOLD = 2000.0  # Edge processes only simplest images
-FOG_COMPLEXITY_THRESHOLD = 5000.0   # Fog handles moderately complex images
+EDGE_COMPLEXITY_THRESHOLD = 5462.0  # Edge processes only simplest images
+FOG_COMPLEXITY_THRESHOLD = 5470.0   # Fog handles moderately complex images
 
 # Server URLs (Update these with actual IP addresses from your laptops)
 # To find IP address on each laptop:

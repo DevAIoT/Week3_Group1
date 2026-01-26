@@ -1,0 +1,554 @@
+{
+  "system_info": {
+    "device_type": "edge",
+    "platform": "Windows-11-10.0.26100-SP0",
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "cpu_count": 22,
+    "ram_total_gb": 31.37,
+    "python_version": "3.12.11",
+    "timestamp": "2026-01-26T15:21:28.009768"
+  },
+  "routing_config": {
+    "edge_threshold": 2000.0,
+    "fog_server_url": "http://172.20.10.2:8000/predict"
+  },
+  "smart_routing_test": {
+    "num_images": 50,
+    "num_successful": 50,
+    "num_failed": 0,
+    "total_time_seconds": 33.725,
+    "model_load_time_seconds": 1.004,
+    "distribution": {
+      "num_local": 0,
+      "num_fog": 0,
+      "num_cloud": 50,
+      "percent_local": 0.0,
+      "percent_fog": 0.0,
+      "percent_cloud": 100.0
+    },
+    "latency": {
+      "avg_local_ms": null,
+      "avg_fog_ms": null,
+      "avg_cloud_ms": 662.35,
+      "avg_total_ms": 662.35
+    },
+    "resources": {
+      "initial": {
+        "cpu_percent": 3.4,
+        "memory_percent": 62.8,
+        "memory_used_gb": 19.7
+      },
+      "final": {
+        "cpu_percent": 3.5,
+        "memory_percent": 62.8,
+        "memory_used_gb": 19.69
+      },
+      "avg_during_test": {
+        "cpu_percent": 5.76,
+        "memory_used_gb": 19.74
+      }
+    },
+    "individual_requests": [
+      {
+        "request_id": 0,
+        "complexity": 5452.255859375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 794.5,
+        "inference_time_ms": 55.83,
+        "confidence": 0.17671310901641846,
+        "top_class": 737
+      },
+      {
+        "request_id": 1,
+        "complexity": 5438.5078125,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 555.2,
+        "inference_time_ms": 45.64,
+        "confidence": 0.23211586475372314,
+        "top_class": 599
+      },
+      {
+        "request_id": 2,
+        "complexity": 5459.84375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 772.44,
+        "inference_time_ms": 44.81,
+        "confidence": 0.21677172183990479,
+        "top_class": 599
+      },
+      {
+        "request_id": 3,
+        "complexity": 5469.41943359375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 547.94,
+        "inference_time_ms": 47.87,
+        "confidence": 0.1435651034116745,
+        "top_class": 599
+      },
+      {
+        "request_id": 4,
+        "complexity": 5482.45556640625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 676.44,
+        "inference_time_ms": 45.69,
+        "confidence": 0.2521723806858063,
+        "top_class": 599
+      },
+      {
+        "request_id": 5,
+        "complexity": 5467.201171875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 711.98,
+        "inference_time_ms": 44.56,
+        "confidence": 0.19186493754386902,
+        "top_class": 599
+      },
+      {
+        "request_id": 6,
+        "complexity": 5465.85693359375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 546.11,
+        "inference_time_ms": 48.67,
+        "confidence": 0.3089867830276489,
+        "top_class": 599
+      },
+      {
+        "request_id": 7,
+        "complexity": 5476.91455078125,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 632.45,
+        "inference_time_ms": 52.07,
+        "confidence": 0.2504664659500122,
+        "top_class": 599
+      },
+      {
+        "request_id": 8,
+        "complexity": 5463.5869140625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 566.52,
+        "inference_time_ms": 50.4,
+        "confidence": 0.22160165011882782,
+        "top_class": 599
+      },
+      {
+        "request_id": 9,
+        "complexity": 5459.927734375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 631.25,
+        "inference_time_ms": 45.55,
+        "confidence": 0.18753860890865326,
+        "top_class": 599
+      },
+      {
+        "request_id": 10,
+        "complexity": 5479.8818359375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 839.49,
+        "inference_time_ms": 48.66,
+        "confidence": 0.18814930319786072,
+        "top_class": 599
+      },
+      {
+        "request_id": 11,
+        "complexity": 5452.7822265625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 716.92,
+        "inference_time_ms": 48.4,
+        "confidence": 0.23853883147239685,
+        "top_class": 599
+      },
+      {
+        "request_id": 12,
+        "complexity": 5473.14306640625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 670.26,
+        "inference_time_ms": 51.2,
+        "confidence": 0.19552432000637054,
+        "top_class": 599
+      },
+      {
+        "request_id": 13,
+        "complexity": 5452.19384765625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 648.16,
+        "inference_time_ms": 45.9,
+        "confidence": 0.2544066607952118,
+        "top_class": 599
+      },
+      {
+        "request_id": 14,
+        "complexity": 5450.85888671875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 671.9,
+        "inference_time_ms": 49.95,
+        "confidence": 0.23284804821014404,
+        "top_class": 599
+      },
+      {
+        "request_id": 15,
+        "complexity": 5445.1962890625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 611.54,
+        "inference_time_ms": 44.35,
+        "confidence": 0.15642929077148438,
+        "top_class": 737
+      },
+      {
+        "request_id": 16,
+        "complexity": 5464.37451171875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 516.69,
+        "inference_time_ms": 46.32,
+        "confidence": 0.21043933928012848,
+        "top_class": 737
+      },
+      {
+        "request_id": 17,
+        "complexity": 5446.9443359375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 912.01,
+        "inference_time_ms": 44.85,
+        "confidence": 0.23909418284893036,
+        "top_class": 737
+      },
+      {
+        "request_id": 18,
+        "complexity": 5455.2978515625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 523.24,
+        "inference_time_ms": 47.7,
+        "confidence": 0.19913749396800995,
+        "top_class": 599
+      },
+      {
+        "request_id": 19,
+        "complexity": 5466.34033203125,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 709.16,
+        "inference_time_ms": 44.06,
+        "confidence": 0.16982299089431763,
+        "top_class": 737
+      },
+      {
+        "request_id": 20,
+        "complexity": 5451.9541015625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 830.86,
+        "inference_time_ms": 48.45,
+        "confidence": 0.18843983113765717,
+        "top_class": 737
+      },
+      {
+        "request_id": 21,
+        "complexity": 5471.236328125,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 842.61,
+        "inference_time_ms": 45.45,
+        "confidence": 0.2697681486606598,
+        "top_class": 599
+      },
+      {
+        "request_id": 22,
+        "complexity": 5450.12646484375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 700.21,
+        "inference_time_ms": 51.67,
+        "confidence": 0.19816166162490845,
+        "top_class": 599
+      },
+      {
+        "request_id": 23,
+        "complexity": 5466.37646484375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 702.69,
+        "inference_time_ms": 52.24,
+        "confidence": 0.24668730795383453,
+        "top_class": 599
+      },
+      {
+        "request_id": 24,
+        "complexity": 5462.1240234375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 697.16,
+        "inference_time_ms": 45.86,
+        "confidence": 0.17499582469463348,
+        "top_class": 599
+      },
+      {
+        "request_id": 25,
+        "complexity": 5450.3232421875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 584.68,
+        "inference_time_ms": 49.21,
+        "confidence": 0.19757713377475739,
+        "top_class": 737
+      },
+      {
+        "request_id": 26,
+        "complexity": 5476.59033203125,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 649.06,
+        "inference_time_ms": 42.99,
+        "confidence": 0.1983828991651535,
+        "top_class": 599
+      },
+      {
+        "request_id": 27,
+        "complexity": 5483.232421875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 783.76,
+        "inference_time_ms": 46.76,
+        "confidence": 0.21071457862854004,
+        "top_class": 599
+      },
+      {
+        "request_id": 28,
+        "complexity": 5459.85546875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 566.75,
+        "inference_time_ms": 49.98,
+        "confidence": 0.23532065749168396,
+        "top_class": 599
+      },
+      {
+        "request_id": 29,
+        "complexity": 5451.05029296875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 687.74,
+        "inference_time_ms": 47.35,
+        "confidence": 0.19687312841415405,
+        "top_class": 599
+      },
+      {
+        "request_id": 30,
+        "complexity": 5466.23681640625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 737.7,
+        "inference_time_ms": 47.1,
+        "confidence": 0.3776196837425232,
+        "top_class": 599
+      },
+      {
+        "request_id": 31,
+        "complexity": 5450.75927734375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 905.95,
+        "inference_time_ms": 45.31,
+        "confidence": 0.2849922180175781,
+        "top_class": 599
+      },
+      {
+        "request_id": 32,
+        "complexity": 5453.89013671875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 515.02,
+        "inference_time_ms": 46.87,
+        "confidence": 0.23657359182834625,
+        "top_class": 599
+      },
+      {
+        "request_id": 33,
+        "complexity": 5470.45654296875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 602.96,
+        "inference_time_ms": 49.38,
+        "confidence": 0.24976864457130432,
+        "top_class": 599
+      },
+      {
+        "request_id": 34,
+        "complexity": 5471.53125,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 565.48,
+        "inference_time_ms": 45.72,
+        "confidence": 0.23924840986728668,
+        "top_class": 599
+      },
+      {
+        "request_id": 35,
+        "complexity": 5468.900390625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 623.99,
+        "inference_time_ms": 42.7,
+        "confidence": 0.16083383560180664,
+        "top_class": 599
+      },
+      {
+        "request_id": 36,
+        "complexity": 5465.5576171875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 436.32,
+        "inference_time_ms": 52.11,
+        "confidence": 0.32517749071121216,
+        "top_class": 599
+      },
+      {
+        "request_id": 37,
+        "complexity": 5454.1982421875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 593.13,
+        "inference_time_ms": 52.07,
+        "confidence": 0.2894494831562042,
+        "top_class": 599
+      },
+      {
+        "request_id": 38,
+        "complexity": 5469.47265625,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 623.66,
+        "inference_time_ms": 45.64,
+        "confidence": 0.17876121401786804,
+        "top_class": 599
+      },
+      {
+        "request_id": 39,
+        "complexity": 5470.0888671875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 712.22,
+        "inference_time_ms": 45.41,
+        "confidence": 0.15177607536315918,
+        "top_class": 599
+      },
+      {
+        "request_id": 40,
+        "complexity": 5456.8486328125,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 598.92,
+        "inference_time_ms": 47.72,
+        "confidence": 0.22481566667556763,
+        "top_class": 599
+      },
+      {
+        "request_id": 41,
+        "complexity": 5457.90966796875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 648.76,
+        "inference_time_ms": 45.65,
+        "confidence": 0.22491304576396942,
+        "top_class": 599
+      },
+      {
+        "request_id": 42,
+        "complexity": 5444.77001953125,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 535.92,
+        "inference_time_ms": 44.9,
+        "confidence": 0.28545495867729187,
+        "top_class": 599
+      },
+      {
+        "request_id": 43,
+        "complexity": 5461.36376953125,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 678.18,
+        "inference_time_ms": 45.59,
+        "confidence": 0.20382842421531677,
+        "top_class": 599
+      },
+      {
+        "request_id": 44,
+        "complexity": 5471.39208984375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 540.53,
+        "inference_time_ms": 46.83,
+        "confidence": 0.18398113548755646,
+        "top_class": 599
+      },
+      {
+        "request_id": 45,
+        "complexity": 5456.33984375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 683.89,
+        "inference_time_ms": 44.38,
+        "confidence": 0.34067320823669434,
+        "top_class": 599
+      },
+      {
+        "request_id": 46,
+        "complexity": 5470.55419921875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 814.78,
+        "inference_time_ms": 50.12,
+        "confidence": 0.25614917278289795,
+        "top_class": 599
+      },
+      {
+        "request_id": 47,
+        "complexity": 5447.6796875,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 604.17,
+        "inference_time_ms": 47.76,
+        "confidence": 0.20854119956493378,
+        "top_class": 737
+      },
+      {
+        "request_id": 48,
+        "complexity": 5474.87646484375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 751.44,
+        "inference_time_ms": 42.99,
+        "confidence": 0.17754988372325897,
+        "top_class": 599
+      },
+      {
+        "request_id": 49,
+        "complexity": 5467.5537109375,
+        "routing_decision": "forward",
+        "inference_source": "cloud",
+        "latency_ms": 644.73,
+        "inference_time_ms": 47.74,
+        "confidence": 0.14863461256027222,
+        "top_class": 599
+      }
+    ]
+  }
+}

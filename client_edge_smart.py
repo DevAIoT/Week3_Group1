@@ -91,10 +91,9 @@ class SmartEdgeClient:
         # Expand dimensions for batch processing
         image = np.expand_dims(image, axis=0)
 
-        # Preprocess for MobileNetV2
-        image = preprocess_input(image.astype(np.float32))
-
-        return image
+        # Return raw image WITHOUT preprocessing
+        # Preprocessing will be applied later for inference only
+        return image.astype(np.float32)
 
     def monitor_resources(self):
         """Monitor current resource usage"""
@@ -109,14 +108,17 @@ class SmartEdgeClient:
         Process image locally on edge device
 
         Args:
-            image: Preprocessed image array
+            image: Raw image array (not preprocessed)
             request_id: Request identifier
 
         Returns:
             dict: Processing result with inference_source="local"
         """
+        # Preprocess image for MobileNetV2
+        preprocessed_image = preprocess_input(image.copy())
+
         start_time = time.time()
-        prediction = self.model.predict(image, verbose=0)
+        prediction = self.model.predict(preprocessed_image, verbose=0)
         end_time = time.time()
 
         inference_time_ms = (end_time - start_time) * 1000
@@ -230,17 +232,17 @@ class SmartEdgeClient:
             try:
                 if process_locally:
                     # Process locally on edge
-                    result = self.process_locally(image, f"request_{i}")
+                    # result = self.process_locally(image, f"request_{i}")
                     inference_source = 'local'
                     num_local += 1
-                else:
-                    # Forward to fog server
-                    result = self.forward_to_fog(image, f"request_{i}")
-                    inference_source = result.get('inference_source', 'fog')
-                    if inference_source == 'fog':
-                        num_fog += 1
-                    elif inference_source == 'cloud':
-                        num_cloud += 1
+                # else:
+                # Forward to fog server
+                result = self.forward_to_fog(image, f"request_{i}")
+                inference_source = result.get('inference_source', 'fog')
+                if inference_source == 'fog':
+                    num_fog += 1
+                elif inference_source == 'cloud':
+                    num_cloud += 1
 
                 # Record request end time
                 request_end = time.time()

@@ -148,8 +148,11 @@ async def predict(request: PredictionRequest):
             # Process on fog server
             print(f"[FOG] Processing locally (complexity: {complexity:.2f})")
 
+            # Preprocess image for MobileNetV2
+            preprocessed_image = preprocess_input(image_array.copy())
+
             start_time = time.time()
-            prediction = model.predict(image_array, verbose=0)
+            prediction = model.predict(preprocessed_image, verbose=0)
             end_time = time.time()
             inference_time_ms = (end_time - start_time) * 1000
 
@@ -200,8 +203,11 @@ async def predict(request: PredictionRequest):
                 # Fallback: Process locally if cloud times out
                 print(f"[FOG] Cloud timeout - processing locally as fallback")
 
+                # Preprocess image for MobileNetV2
+                preprocessed_image = preprocess_input(image_array.copy())
+
                 start_time = time.time()
-                prediction = model.predict(image_array, verbose=0)
+                prediction = model.predict(preprocessed_image, verbose=0)
                 end_time = time.time()
                 inference_time_ms = (end_time - start_time) * 1000
 
@@ -214,8 +220,11 @@ async def predict(request: PredictionRequest):
                 # Fallback: Process locally if cloud is unreachable
                 print(f"[FOG] Cloud unreachable - processing locally as fallback: {str(e)}")
 
+                # Preprocess image for MobileNetV2
+                preprocessed_image = preprocess_input(image_array.copy())
+
                 start_time = time.time()
-                prediction = model.predict(image_array, verbose=0)
+                prediction = model.predict(preprocessed_image, verbose=0)
                 end_time = time.time()
                 inference_time_ms = (end_time - start_time) * 1000
 

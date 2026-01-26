@@ -117,11 +117,14 @@ async def predict(request: PredictionRequest):
                 detail=f"Invalid image shape. Expected (1, 224, 224, 3), got {image_array.shape}"
             )
 
+        # Preprocess image for MobileNetV2
+        preprocessed_image = preprocess_input(image_array.copy())
+
         # Record start time
         start_time = time.time()
 
         # Perform inference
-        prediction = model.predict(image_array, verbose=0)
+        prediction = model.predict(preprocessed_image, verbose=0)
 
         # Record end time
         end_time = time.time()

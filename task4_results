@@ -1,0 +1,103 @@
+============================================================
+Smart Edge Client - Three-Tier Routing Test
+============================================================
+
+============================================================
+Smart Edge Client - Task 4 Three-Tier Routing Test
+============================================================
+Edge Threshold: 5462.0
+Fog Server: http://172.20.10.2:8000/predict
+
+Initializing local model for edge processing...
+Model loaded in 0.57 seconds
+Performing warm-up inference...
+Warm-up complete
+
+[OK] Fog server is healthy and ready
+
+Initial Resources:
+  CPU: 9.1%
+  Memory: 8.76 GB (57.3%)
+
+Generating 50 test images...
+Generated 50 images
+
+Running smart routing test...
+[Request 0] Complexity: 5452.26 → FOG (921.9ms)
+[Request 1] Complexity: 5438.51 → FOG (918.3ms)
+[Request 2] Complexity: 5459.84 → FOG (691.7ms)
+[Request 3] Complexity: 5469.42 → FOG (1073.5ms)
+[Request 4] Complexity: 5482.46 → CLOUD (1631.7ms)
+[Request 5] Complexity: 5467.20 → FOG (822.9ms)
+[Request 6] Complexity: 5465.86 → FOG (670.6ms)
+[Request 7] Complexity: 5476.91 → CLOUD (1510.8ms)
+[Request 8] Complexity: 5463.59 → FOG (827.6ms)
+[Request 9] Complexity: 5459.93 → FOG (1105.0ms)
+[Request 10] Complexity: 5479.88 → CLOUD (2206.7ms)
+[Request 11] Complexity: 5452.78 → FOG (1058.3ms)
+[Request 12] Complexity: 5473.14 → CLOUD (1639.4ms)
+[Request 13] Complexity: 5452.19 → FOG (723.0ms)
+[Request 14] Complexity: 5450.86 → FOG (840.8ms)
+[Request 15] Complexity: 5445.20 → FOG (835.3ms)
+[Request 16] Complexity: 5464.37 → FOG (971.4ms)
+[Request 17] Complexity: 5446.94 → FOG (1478.6ms)
+[Request 18] Complexity: 5455.30 → FOG (779.1ms)
+[Request 19] Complexity: 5466.34 → FOG (621.3ms)
+[Request 20] Complexity: 5451.95 → FOG (1031.2ms)
+[Request 21] Complexity: 5471.24 → CLOUD (1749.5ms)
+[Request 22] Complexity: 5450.13 → FOG (1086.9ms)
+[Request 23] Complexity: 5466.38 → FOG (678.9ms)
+[Request 24] Complexity: 5462.12 → FOG (1157.0ms)
+[Request 25] Complexity: 5450.32 → FOG (863.0ms)
+[Request 26] Complexity: 5476.59 → CLOUD (1879.1ms)
+[Request 27] Complexity: 5483.23 → CLOUD (1506.8ms)
+[Request 28] Complexity: 5459.85 → FOG (610.3ms)
+[Request 29] Complexity: 5451.05 → FOG (873.1ms)
+[Request 30] Complexity: 5466.24 → FOG (857.8ms)
+[Request 31] Complexity: 5450.76 → FOG (814.9ms)
+[Request 32] Complexity: 5453.89 → FOG (1044.1ms)
+[Request 33] Complexity: 5470.46 → CLOUD (1217.7ms)
+[Request 34] Complexity: 5471.53 → CLOUD (1314.2ms)
+[Request 35] Complexity: 5468.90 → FOG (1928.6ms)
+[Request 36] Complexity: 5465.56 → FOG (736.2ms)
+[Request 37] Complexity: 5454.20 → FOG (1001.8ms)
+[Request 38] Complexity: 5469.47 → FOG (826.8ms)
+[Request 39] Complexity: 5470.09 → CLOUD (1489.6ms)
+[Request 40] Complexity: 5456.85 → FOG (999.5ms)
+[Request 41] Complexity: 5457.91 → FOG (693.6ms)
+[Request 42] Complexity: 5444.77 → FOG (802.9ms)
+[Request 43] Complexity: 5461.36 → FOG (730.6ms)
+[Request 44] Complexity: 5471.39 → CLOUD (1524.3ms)
+[Request 45] Complexity: 5456.34 → FOG (600.9ms)
+[Request 46] Complexity: 5470.55 → CLOUD (1222.3ms)
+[Request 47] Complexity: 5447.68 → FOG (814.2ms)
+[Request 48] Complexity: 5474.88 → CLOUD (2066.2ms)
+[Request 49] Complexity: 5467.55 → FOG (633.7ms)
+
+============================================================
+Smart Routing Test Results
+============================================================
+
+Requests:
+  Total: 50
+  Successful: 50
+  Failed: 0
+
+Inference Source Distribution:
+  Local (Edge): 24 requests (48.0%)
+  Fog: 37 requests (74.0%)
+  Cloud: 13 requests (26.0%)
+
+Average Latency by Tier:
+  Fog: 895.28 ms
+  Cloud: 1612.17 ms
+  Overall: 1081.67 ms
+
+Total Time: 54.669 seconds
+Model Load Time: 0.566 seconds
+
+Edge Client Resources:
+  Avg CPU: 5.3%
+  Avg Memory: 8.75 GB
+
+============================================================

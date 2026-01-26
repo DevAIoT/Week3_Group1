@@ -1,0 +1,66 @@
+{
+  "system_info": {
+    "platform": "macOS-15.7.3-arm64-arm-64bit",
+    "processor": "arm",
+    "cpu_count": 8,
+    "ram_total_gb": 16.0,
+    "python_version": "3.9.6",
+    "tensorflow_version": "2.20.0",
+    "timestamp": "2026-01-26T11:36:00.483995",
+    "gpu_available": false,
+    "gpu_count": 0
+  },
+  "same_images_test": {
+    "num_images": 100,
+    "use_same_image": true,
+    "total_time_seconds": 6.837,
+    "avg_time_per_image_ms": 68.37,
+    "throughput_images_per_sec": 14.63,
+    "start_time": "2026-01-26T11:36:01.722513",
+    "end_time": "2026-01-26T11:36:08.559116",
+    "resources": {
+      "initial": {
+        "cpu_percent": 15.9,
+        "memory_percent": 76.4,
+        "memory_used_gb": 6.18
+      },
+      "final": {
+        "cpu_percent": 52.6,
+        "memory_percent": 76.8,
+        "memory_used_gb": 6.14
+      },
+      "average_during_inference": {
+        "cpu_percent": 38.02,
+        "memory_percent": 76.59,
+        "memory_used_gb": 6.16
+      }
+    }
+  },
+  "different_images_test": {
+    "num_images": 100,
+    "use_same_image": false,
+    "total_time_seconds": 8.251,
+    "avg_time_per_image_ms": 82.51,
+    "throughput_images_per_sec": 12.12,
+    "start_time": "2026-01-26T11:36:10.819145",
+    "end_time": "2026-01-26T11:36:19.070536",
+    "resources": {
+      "initial": {
+        "cpu_percent": 72.3,
+        "memory_percent": 76.8,
+        "memory_used_gb": 6.12
+      },
+      "final": {
+        "cpu_percent": 74.7,
+        "memory_percent": 77.3,
+        "memory_used_gb": 6.09
+      },
+      "average_during_inference": {
+        "cpu_percent": 64.92,
+        "memory_percent": 77.27,
+        "memory_used_gb": 6.03
+      }
+    }
+  },
+  "model_load_time": 0.526512861251831
+}

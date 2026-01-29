@@ -3,11 +3,10 @@ CAMERA_INDEX = 0
 CAMERA_WIDTH = 640
 CAMERA_HEIGHT = 480
 
-# MediaPipe Hands settings
-MP_MODEL_COMPLEXITY = 0  # 0=lite (faster on RPi), 1=full
-MP_MAX_NUM_HANDS = 1
-MP_MIN_DETECTION_CONFIDENCE = 0.7
-MP_MIN_TRACKING_CONFIDENCE = 0.5
+# YOLO11 Pose settings
+YOLO_MODEL_PATH = 'yolo11n-pose.pt'  # nano model (faster on RPi), use yolo11s-pose.pt for better accuracy
+YOLO_CONFIDENCE = 0.7  # Minimum detection confidence
+YOLO_IOU = 0.5  # IoU threshold for NMS
 
 # Stabilization settings
 STABILIZE_FRAMES = 10        # Consecutive identical readings required

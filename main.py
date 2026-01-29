@@ -60,10 +60,9 @@ def main():
     print(f"API running at http://{config.API_HOST}:{config.API_PORT}")
 
     detector = HandDetector(
-        model_complexity=config.MP_MODEL_COMPLEXITY,
-        max_hands=config.MP_MAX_NUM_HANDS,
-        min_detection_confidence=config.MP_MIN_DETECTION_CONFIDENCE,
-        min_tracking_confidence=config.MP_MIN_TRACKING_CONFIDENCE,
+        model_path=config.YOLO_MODEL_PATH,
+        confidence=config.YOLO_CONFIDENCE,
+        iou=config.YOLO_IOU,
     )
     stabilizer = GestureStabilizer(
         required_frames=config.STABILIZE_FRAMES,
@@ -89,9 +88,9 @@ def main():
 
             finger_count = None
             if landmarks_list and handedness_list:
-                hand_lm = landmarks_list[0]
-                label = handedness_list[0].classification[0].label
-                finger_count = count_fingers(hand_lm, label)
+                hand_keypoints = landmarks_list[0]
+                label = handedness_list[0]
+                finger_count = count_fingers(hand_keypoints, label)
 
                 accepted = stabilizer.update(finger_count)
                 if accepted is not None:

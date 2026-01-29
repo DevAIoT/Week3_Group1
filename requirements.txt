@@ -2,3 +2,4 @@ mediapipe==0.10.14
 opencv-python>=4.8.0
 numpy>=1.24.0
 flask>=3.0.0
+picamera2>=0.3.12  # For Raspberry Pi Camera Module

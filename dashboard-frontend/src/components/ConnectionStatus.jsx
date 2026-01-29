@@ -1,10 +1,20 @@
+import { Badge } from '@/components/ui/badge'
+import { Wifi, WifiOff } from 'lucide-react'
+
 export function ConnectionStatus({ isConnected }) {
   return (
-    <div className={`flex items-center space-x-2 ${isConnected ? 'text-green-600' : 'text-yellow-600'}`}>
-      <div className={`w-3 h-3 rounded-full ${isConnected ? 'bg-green-600 animate-pulse' : 'bg-yellow-600'}`} />
-      <span className="text-sm font-medium">
-        {isConnected ? 'Live (WebSocket)' : 'Polling Mode'}
+    <Badge
+      variant="outline"
+      className={
+        isConnected
+          ? 'bg-green-500/15 text-green-600 border-green-500/20 dark:text-green-400'
+          : 'bg-yellow-500/15 text-yellow-600 border-yellow-500/20 dark:text-yellow-400'
+      }
+    >
+      <span className="flex items-center gap-1.5">
+        {isConnected ? <Wifi className="h-3.5 w-3.5" /> : <WifiOff className="h-3.5 w-3.5" />}
+        {isConnected ? 'Live' : 'Polling'}
       </span>
-    </div>
-  );
+    </Badge>
+  )
 }

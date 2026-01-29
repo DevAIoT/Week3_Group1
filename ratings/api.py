@@ -87,4 +87,26 @@ def create_app(db):
 
         return jsonify(result)
 
+    @app.route("/api/ratings/distribution", methods=["GET"])
+    def distribution():
+        """Get rating counts grouped by rating value (1-5)."""
+        all_ratings = db.get_all(limit=100000, offset=0)
+        dist = {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0}
+        for r in all_ratings:
+            key = str(r["rating"])
+            if key in dist:
+                dist[key] += 1
+        return jsonify(dist)
+
+    @app.route("/api/ratings/source-breakdown", methods=["GET"])
+    def source_breakdown():
+        """Get rating counts grouped by source."""
+        all_ratings = db.get_all(limit=100000, offset=0)
+        sources = {}
+        for r in all_ratings:
+            src = r.get("source", "unknown")
+            sources[src] = sources.get(src, 0) + 1
+        result = [{"source": s, "count": c} for s, c in sources.items()]
+        return jsonify(result)
+
     return app

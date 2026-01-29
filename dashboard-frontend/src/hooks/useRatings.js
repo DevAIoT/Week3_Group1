@@ -2,60 +2,66 @@ import { useState, useEffect, useCallback } from 'react';
 import socketService from '../services/socket';
 import api from '../services/api';
 
-const POLLING_INTERVAL = 10000; // 10 seconds
+const POLLING_INTERVAL = 10000;
 
 export function useRatings() {
   const [ratings, setRatings] = useState([]);
   const [summary, setSummary] = useState(null);
   const [timeline, setTimeline] = useState([]);
+  const [timelinePeriod, setTimelinePeriod] = useState('hour');
+  const [distribution, setDistribution] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isConnected, setIsConnected] = useState(false);
 
-  // Fetch data from API
   const fetchData = useCallback(async () => {
     try {
-      const [ratingsRes, summaryRes, timelineRes] = await Promise.all([
-        api.getRatings({ limit: 20 }),
+      const [ratingsRes, summaryRes, timelineRes, distRes] = await Promise.all([
+        api.getRatings({ limit: 200 }),
         api.getSummary(),
-        api.getTimeline('hour'),
+        api.getTimeline(timelinePeriod),
+        api.getDistribution(),
       ]);
       setRatings(ratingsRes.data);
       setSummary(summaryRes.data);
       setTimeline(timelineRes.data);
+      setDistribution(distRes.data);
       setLoading(false);
     } catch (error) {
       console.error('Failed to fetch data:', error);
+      setLoading(false);
+    }
+  }, [timelinePeriod]);
+
+  const fetchTimeline = useCallback(async (period) => {
+    setTimelinePeriod(period);
+    try {
+      const res = await api.getTimeline(period);
+      setTimeline(res.data);
+    } catch (error) {
+      console.error('Failed to fetch timeline:', error);
     }
   }, []);
 
   useEffect(() => {
-    // Initial data fetch
     fetchData();
 
-    // Setup WebSocket
     socketService.connect();
 
-    // Listen for WebSocket connection status
     const checkConnection = setInterval(() => {
       setIsConnected(socketService.isConnected());
     }, 1000);
 
-    // Listen for new ratings via WebSocket
     socketService.on('rating_update', (newRating) => {
-      console.log('New rating via WebSocket:', newRating);
-      setRatings(prev => [newRating, ...prev].slice(0, 20));
-      fetchData(); // Refresh summary stats and timeline
+      setRatings(prev => [newRating, ...prev].slice(0, 200));
+      fetchData();
     });
 
-    // Setup polling fallback
     const pollingInterval = setInterval(() => {
       if (!socketService.isConnected()) {
-        console.log('Polling for updates...');
         fetchData();
       }
     }, POLLING_INTERVAL);
 
-    // Cleanup
     return () => {
       clearInterval(checkConnection);
       clearInterval(pollingInterval);
@@ -63,5 +69,15 @@ export function useRatings() {
     };
   }, [fetchData]);
 
-  return { ratings, summary, timeline, loading, isConnected, refetch: fetchData };
+  return {
+    ratings,
+    summary,
+    timeline,
+    timelinePeriod,
+    distribution,
+    loading,
+    isConnected,
+    refetch: fetchData,
+    fetchTimeline,
+  };
 }

@@ -19,6 +19,10 @@ export const getTimeline = (period = 'hour') => {
   return api.get('/api/ratings/timeline', { params: { period } });
 };
 
+export const getDistribution = () => {
+  return api.get('/api/ratings/distribution');
+};
+
 export const createRating = (rating) => {
   return api.post('/api/ratings', { rating });
 };
@@ -27,5 +31,6 @@ export default {
   getRatings,
   getSummary,
   getTimeline,
+  getDistribution,
   createRating,
 };

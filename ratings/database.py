@@ -13,6 +13,7 @@ class RatingsDatabase:
         self._conn.row_factory = sqlite3.Row
         self._conn.execute("PRAGMA journal_mode=WAL")
         self._create_table()
+        self.socketio = None
 
     def _create_table(self):
         self._conn.execute("""
@@ -25,6 +26,10 @@ class RatingsDatabase:
         """)
         self._conn.commit()
 
+    def set_socketio(self, socketio):
+        """Set SocketIO instance for event emission."""
+        self.socketio = socketio
+
     def insert(self, rating, source="gesture"):
         """Insert a rating (1-5). Returns the new row id."""
         ts = datetime.now(timezone.utc).isoformat()
@@ -33,7 +38,18 @@ class RatingsDatabase:
             (rating, ts, source),
         )
         self._conn.commit()
-        return cursor.lastrowid
+        row_id = cursor.lastrowid
+
+        # Emit WebSocket event if connected
+        if self.socketio:
+            self.socketio.emit('new_rating', {
+                'id': row_id,
+                'rating': rating,
+                'timestamp': ts,
+                'source': source
+            })
+
+        return row_id
 
     def get_all(self, limit=100, offset=0):
         """Return ratings as list of dicts, newest first."""

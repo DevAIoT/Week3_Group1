@@ -2,13 +2,16 @@
 
 import csv
 import io
+from datetime import datetime, timedelta, timezone
 
 from flask import Flask, jsonify, request, Response
+from flask_cors import CORS
 
 
 def create_app(db):
     """Application factory. Pass a RatingsDatabase instance."""
     app = Flask(__name__)
+    CORS(app)  # Enable CORS for dashboard requests
 
     @app.route("/api/ratings", methods=["GET"])
     def list_ratings():
@@ -44,5 +47,44 @@ def create_app(db):
             mimetype="text/csv",
             headers={"Content-Disposition": "attachment; filename=ratings.csv"},
         )
+
+    @app.route("/api/ratings/timeline", methods=["GET"])
+    def timeline():
+        """Get ratings grouped by time period."""
+        period = request.args.get('period', 'hour')
+        hours_map = {'hour': 24, 'day': 7*24, 'week': 4*7*24}
+        hours = hours_map.get(period, 24)
+
+        # Get ratings from the last N hours
+        cutoff_time = datetime.now(timezone.utc) - timedelta(hours=hours)
+
+        # Get all ratings for timeline
+        all_ratings = db.get_all(limit=10000, offset=0)
+
+        # Filter by time and group by hour buckets
+        timeline_data = {}
+        for rating in all_ratings:
+            rating_time = datetime.fromisoformat(rating['timestamp'])
+            if rating_time >= cutoff_time:
+                # Round to hour bucket
+                hour_bucket = rating_time.replace(minute=0, second=0, microsecond=0)
+                bucket_key = hour_bucket.isoformat()
+
+                if bucket_key not in timeline_data:
+                    timeline_data[bucket_key] = {'count': 0, 'sum': 0}
+
+                timeline_data[bucket_key]['count'] += 1
+                timeline_data[bucket_key]['sum'] += rating['rating']
+
+        # Convert to list format
+        result = []
+        for timestamp, data in sorted(timeline_data.items()):
+            result.append({
+                'timestamp': timestamp,
+                'count': data['count'],
+                'average': round(data['sum'] / data['count'], 2) if data['count'] > 0 else 0
+            })
+
+        return jsonify(result)
 
     return app

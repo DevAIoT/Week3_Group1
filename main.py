@@ -4,6 +4,7 @@ import signal
 import threading
 
 import cv2
+from flask_socketio import SocketIO
 
 import config
 from gesture.camera import Camera
@@ -15,9 +16,11 @@ from ratings.api import create_app
 
 
 def start_api(db):
-    """Run Flask API in a daemon thread."""
+    """Run Flask API with WebSocket support in a daemon thread."""
     app = create_app(db)
-    app.run(host=config.API_HOST, port=config.API_PORT, use_reloader=False)
+    socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading')
+    db.set_socketio(socketio)  # Allow DB to emit events
+    socketio.run(app, host=config.API_HOST, port=config.API_PORT, allow_unsafe_werkzeug=True, use_reloader=False)
 
 
 def draw_overlay(frame, finger_count, stabilizer, last_accepted):
